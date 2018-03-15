@@ -1,0 +1,9 @@
+[package]
+name = "routes"
+version = "0.1.0"
+authors = ["Lemures <martinsmith3d.art@gmail.com>"]
+
+[workspace]
+grpio-proto = {path="./proto_buf"}
+
+[dependencies]
