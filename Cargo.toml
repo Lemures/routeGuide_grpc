@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Lemures <martinsmith3d.art@gmail.com>"]
 
 [workspace]
-members = ["proto_buf"]
+members = ["proto_build"]
 
 
 
@@ -24,7 +24,7 @@ secure = ["grpcio-sys/secure"]
 
 
 [dev-dependencies]
-grpcio-proto = {path="proto_buf" , version = "*"}
+grpcio-proto = {path="proto_build" , version = "*"}
 serde_json = "1.0"
 serde = "1.0"
 serde_derive = "1.0"

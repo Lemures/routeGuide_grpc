@@ -1,0 +1,16 @@
+[package]
+name = "grpcio-proto"
+version = "0.1.0"
+authors = ["Lemures <martinsmith3d.art@gmail.com>"]
+description = "Learning to use pingCap's gRPC-rs lib"
+readme = "README.md"
+build="build.rs"
+
+[dependencies]
+protobuf = "1.2"
+futures = "^0.1.15"
+grpcio = { version = "~0.2", features = ["secure"] }
+
+[build-dependencies]
+protobuf = "1.2"
+grpcio-compiler = "0.2.0"
