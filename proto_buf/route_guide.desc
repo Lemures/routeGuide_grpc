@@ -1,0 +1,28 @@
+
+„
+proto/route/route_guide.proto
+RouteGuide"A
+Point
+latitude (Rlatitude
+	longitude (R	longitude"Q
+	Rectangle!
+lo (2.RouteGuide.PointRlo!
+hi (2.RouteGuide.PointRhi"L
+Feature
+name (	Rname-
+location (2.RouteGuide.PointRlocation"T
+	RouteNote-
+location (2.RouteGuide.PointRlocation
+message (	Rmessage"“
+RouteSummary
+point_count (R
+pointCount#
+feature_count (RfeatureCount
+distance (Rdistance!
+elapsed_time (RelapsedTime2þ
+
+RouteGuide5
+GetFeatures.RouteGuide.Point.RouteGuide.Feature<
+ListFeatures.RouteGuide.Rectangle.RouteGuide.Feature0<
+RecordRoute.RouteGuide.Point.RouteGuide.RouteSummary(=
+	RouteChat.RouteGuide.RouteNote.RouteGuide.RouteNote(0bproto3
