@@ -1,8 +1,8 @@
 # Build Shell breakdown
 
-There are Three Build Shells in this Dir but you only need to run 1 of them but it's important to know there difference.
+There are Three Build Shells in this Dir but you only need to run 1 of them but it's important to know the difference.
 
-Starting with the `Build_basic.sh` this script is design to be indiscriminate. It is best not to use this if you have broken your Proto buff package into multiple files. Executing this on such project will lead to several `*.desc` with different names but duplicate content.
+Starting with the `Build_basic.sh` this script is design to be indiscriminate. It is best **not** to use this if you have broken your Proto buff package into multiple files. Executing this on such project will lead to several `*.desc` with different names but duplicate content.
 
 _`Build_basic.sh` might be slightly different then example below_
 
@@ -120,3 +120,37 @@ alternatively you can remove everything from `<<EOF` down and add text to a `.tx
 **Note I made a build shell for extern files.**
 
 incidentally if the shell generates a file that looks like this `testing.desc` it mean the `.txt` isn't in UNIX. In terminal `dos2unix proto-build.txt` will fix that problem for next time you run the `build_extern.sh`
+
+# Build.rs breakdown
+
+I might but hurt my self trying to explain this one since there's a lot of stuff to be cognizant about for this build script to work right.
+
+## tl;dr
+
+make the necessary changes to the array (`&[...]`) in `main()` and in `./src/lib.rs` have a snip includes your proto buf.
+
+_proto_buf/build.rs_
+
+```
+//build.rs
+
+fn main() {
+    for package in &["route_guide"] {
+        compile(format!("{}.desc", package), package);
+    }
+}
+```
+
+_proto_buf/src/lib.rs_
+
+```
+//./src/lib.rs
+
+pub mod route_guide {
+    include!(concat!(env!("OUT_DIR"), "/route_guide/mod.rs"));
+}
+```
+
+## Build script explained
+
+``

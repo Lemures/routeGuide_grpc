@@ -4,39 +4,13 @@ version = "0.1.0"
 authors = ["Lemures <martinsmith3d.art@gmail.com>"]
 description = "Learning to use pingCap's gRPC-rs lib"
 readme = "README.md"
-
-[workspace]
-members = ["proto_buf"]
+build="build.rs"
 
 [dependencies]
-grpcio-sys = "0.2.*"
-libc = "0.2"
+protobuf = "1.2"
 futures = "^0.1.15"
-protobuf = { version = "1.2", optional = true }
-log = "0.3"
-dotenv = "0.11.0"
-dotenv_codegen = "0.11.0"
+grpcio = { version = "~0.2", features = ["secure"] }
 
-serde_json = "1.0"
-serde = "1.0"
-
-[dev-dependencies]
-grpcio-proto = {path="proto_buf" , version = "*"}
-serde_json = "1.0"
-serde = "1.0"
-serde_derive = "1.0"
-rand = "0.3"
-slog = "2.0"
-slog-async = "2.1"
-slog-stdlog = "3.0"
-slog-scope = "4.0"
-slog-term = "2.2"
-
-
-[[bin]]
-name="route_guide_server"
-path="src/server/server.rs"
-
-[[bin]]
-name="route_guide_client"
-path="src/client/client.rs"
+[build-dependencies]
+protobuf = "1.2"
+grpcio-compiler = "0.2.0"
