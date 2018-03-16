@@ -76,7 +76,7 @@ So the first shell as I said was indiscriminate. If it found a `*.proto` file it
 
 For cases where you have a package broken up into several files but share the same package name i.e. `package testing;`. It would be covenant to have the shell only generate `testing.desc` needed rather than have it create 6 different named files with identical content. less cleanup work for us is always welcomed.
 
-So getting to the point using some external text cherry-pick help us here.
+So getting to the point we can use some external text to cherry-pick.
 
 ```
 . grpc/testing testing
