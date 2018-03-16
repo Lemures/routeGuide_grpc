@@ -1,0 +1,7 @@
+syntax="proto3";
+
+package fake;
+
+message AnotherFake{
+  string fake_message = 1;
+}

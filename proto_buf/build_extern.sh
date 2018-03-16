@@ -19,8 +19,4 @@ while read include package name; do
   include="$rootdir/proto/$include"
   echo building $name.desc
 find "$prefix" -name "*.proto" | xargs protoc -I "$include" -o "$rootdir/$name.desc"
-done <<EOF
-. testing testing
-. . route_guide
-. a1/b1 deep
-EOF
+done
